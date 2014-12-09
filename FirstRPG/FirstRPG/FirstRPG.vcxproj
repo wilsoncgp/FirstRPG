@@ -52,12 +52,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Liam\Documents\Visual Studio 2012\Projects\FirstRPG\Libraries\SDL2_mixer-2.0.0\include;C:\Users\Liam\Documents\Visual Studio 2012\Projects\FirstRPG\Libraries\SDL2_image-2.0.0\include;C:\Users\Liam\Documents\Visual Studio 2012\Projects\FirstRPG\Libraries\SDL2-2.0.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\Libraries\SDL2_mixer-2.0.0\include;$(SolutionDir)\..\Libraries\SDL2_image-2.0.0\include;$(SolutionDir)\..\Libraries\SDL2-2.0.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Liam\Documents\Visual Studio 2012\Projects\FirstRPG\Libraries\SDL2_mixer-2.0.0\lib\x86;C:\Users\Liam\Documents\Visual Studio 2012\Projects\FirstRPG\Libraries\SDL2_image-2.0.0\lib\x86;C:\Users\Liam\Documents\Visual Studio 2012\Projects\FirstRPG\Libraries\SDL2-2.0.3\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\Libraries\SDL2_mixer-2.0.0\lib\x86;$(SolutionDir)\..\Libraries\SDL2_image-2.0.0\lib\x86;$(SolutionDir)\..\Libraries\SDL2-2.0.3\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
