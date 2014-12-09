@@ -1,6 +1,7 @@
 #pragma once
 #include "SDL_Setup.h"
 #include "Sprite.h"
+#include <math.h>
 
 class CMain
 {
@@ -9,6 +10,7 @@ public:
 	~CMain(void);
 
 	void GameLoop(void);
+	double GetDistance(int x1, int y1, int x2, int y2);
 
 private:
 	int _screenWidth;
@@ -20,11 +22,8 @@ private:
 	CSprite* _grass;
 	CSprite* _bob;
 
-	bool _moveUp;
-	bool _moveLeft;
-	bool _moveDown;
-	bool _moveRight;
-
 	unsigned int _timeCheck;
+	int _mouseX;
+	int _mouseY;
 };
 
