@@ -53,6 +53,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)\..\Libraries\SDL2_mixer-2.0.0\include;$(SolutionDir)\..\Libraries\SDL2_image-2.0.0\include;$(SolutionDir)\..\Libraries\SDL2-2.0.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -60,6 +61,12 @@
       <AdditionalLibraryDirectories>$(SolutionDir)\..\Libraries\SDL2_mixer-2.0.0\lib\x86;$(SolutionDir)\..\Libraries\SDL2_image-2.0.0\lib\x86;$(SolutionDir)\..\Libraries\SDL2-2.0.3\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)..\Libraries\SDL2-2.0.3\lib\x86\*.dll" "$(OutDir)"
+xcopy /y /d "$(SolutionDir)..\Libraries\SDL2_image-2.0.0\lib\x86\*.dll" "$(OutDir)"
+xcopy /y /d "$(SolutionDir)..\Libraries\SDL2_mixer-2.0.0\lib\x86\*.dll" "$(OutDir)"
+xcopy /y /d "$(ProjectDir)data" "$(OutDir)data\" /s /i</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

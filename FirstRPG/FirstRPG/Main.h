@@ -25,6 +25,6 @@ private:
 	bool _moveDown;
 	bool _moveRight;
 
-	int _timeCheck;
+	unsigned int _timeCheck;
 };
 
