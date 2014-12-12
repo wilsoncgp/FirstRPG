@@ -7,7 +7,7 @@ CSprite::CSprite(SDL_Renderer* renderer, std::string filePath, int x, int y, int
 	_renderer = renderer;
 	_image = NULL;
 	_image = IMG_LoadTexture(_renderer, filePath.c_str());
-
+	
 	if(_image == NULL)
 	{
 		std::cout << "Couldn't Load " << filePath.c_str() << std::endl;
@@ -32,26 +32,41 @@ void CSprite::Draw(void)
 
 int CSprite::GetX(void)
 {
-	return _rect.x;
+	return _position.GetX();
 }
 
 int CSprite::GetY(void)
 {
-	return _rect.y;
+	return _position.GetY();
+}
+
+CVector2D CSprite::GetPosition(void)
+{
+	return _position;
 }
 
 void CSprite::SetX(int x)
 {
-	_rect.x = x;
+	_position.SetX(x);
+	_rect.x = x - (int) ((float)_rect.w / 2.0f);
 }
 
 void CSprite::SetY(int y)
 {
-	_rect.y = y;
+	_position.SetY(y);
+	_rect.y = y - _rect.h;
 }
 
 void CSprite::SetPosition(int x, int y)
 {
-	_rect.x = x;
-	_rect.y = y;
+	_position.SetPosition(x, y);
+	_rect.x = x - (int) ((float)_rect.w / 2.0f);
+	_rect.y = y - _rect.h;
+}
+
+void CSprite::SetPosition(CVector2D pos)
+{
+	_position = pos;
+	_rect.x = pos.GetX() - (int) ((float)_rect.w / 2.0f);
+	_rect.y = pos.GetY() - _rect.h;
 }

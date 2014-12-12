@@ -20,7 +20,7 @@ public:
 	float ScalarDistanceBetween(const CVector2D &other) const;
 	CVector2D VectorDistanceBetween(const CVector2D &other) const;
 	float DotProduct(const CVector2D &other) const;
-	CVector2D CrossProduct(const CVector2D &other) const;
+	float CrossProduct(const CVector2D &other) const;
 
 private:
 	float _x;

@@ -66,8 +66,7 @@ float CVector2D::ScalarDistanceBetween(const CVector2D &other) const
 
 CVector2D CVector2D::VectorDistanceBetween(const CVector2D& other) const
 {
-	//TODO: Implement VectorDistanceBetween
-	return CVector2D();
+	return CVector2D(other.GetX() - this->_x, other.GetY() - this->_y);
 }
 
 float CVector2D::DotProduct(const CVector2D &other) const
@@ -75,8 +74,7 @@ float CVector2D::DotProduct(const CVector2D &other) const
 	return (_x * other.GetX()) + (_y * other.GetY());
 }
 
-CVector2D CVector2D::CrossProduct(const CVector2D &other) const
+float CVector2D::CrossProduct(const CVector2D &other) const
 {
-	//TODO: Implement CrossProduct
-	return CVector2D();
+	return (_x * other.GetY()) - (_y * other.GetX());
 }
